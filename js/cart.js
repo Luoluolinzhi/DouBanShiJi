@@ -31,7 +31,7 @@ $(function(){
 	    }
 	}
 	$.ajax({
-		url: "http://my.blog.com/index.php/Api/cart/addcart",
+		url: "",
 		type: "post",
 		dataType: "json",
 		data: {
@@ -45,11 +45,11 @@ $(function(){
 				alert(message);
 			}
 		},
-		error: function(res){
+		error: function(){
 			var goodsStr = "";
 			var g = res.data.carts;
 			for(var i=0; i<g.length; i++){
-				goodsStr += "<div class='goodsList'><span class='checkIcon'></span><div class="goodsInfo clearfix"><img src='./image/"+g[i].goods_image+"'><div class='info'><h6>"+g[i].goods_title+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>3</span><span class='numJia'>+</span></div></div><div class='del'><h6>删除</h6><span>"+g[i].goods_price+"</span></div></div></div>"
+				goodsStr += "<div class='goodsList'><span class='checkIcon'></span><div class='goodsInfo clearfix'><img src='./image/"+g[i].goods_image+"'><div class='info'><h6>"+g[i].goods_title+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>3</span><span class='numJia'>+</span></div></div><div class='del'><h6>删除</h6><span>"+g[i].goods_price+"</span></div></div></div>"
 			}
 			$(".goodsLists").html(goodsStr);
 		}
