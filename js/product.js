@@ -135,5 +135,16 @@ $(function(){
 		$(".shangWu").hide();
 		$("body").removeClass("over");
 	})
+	// $.ajax({
+	// 	url: 'http://dbshop.com/index.php/Api/index/index',
+	// 	dataType:'json',
+	// 	type:'get',
+	// 	success: function(res){
+	// 		console.log(res)
+	// 	},
+	// 	error: function(){
+	// 		alert("网络错误")
+	// 	}
+	// })
 });
 
