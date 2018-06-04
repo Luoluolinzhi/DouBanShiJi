@@ -2,5 +2,8 @@ $(function(){
 	$(".checkIcon").click(function(){
 		$(this).toggleClass("checkedIcon");
 	})
-
+	$(".all").click(function(){
+		$(this).toggleClass("checkedIcon");
+		$(".checkIcon").toggleClass("checkedIcon");
+	})
 })

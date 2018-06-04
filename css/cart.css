@@ -1,7 +1,7 @@
 html,body {
 	font-size: 62.5%;
 }
-body,div,h3,img,span,p,h6 {
+body,div,h3,img,span,p,h6,i{
 	margin: 0;
 	padding: 0;
 }
@@ -66,7 +66,6 @@ body{
 
 }
 	.goodsList{
-		
 		border-bottom: 0.2rem solid #e4e4e4;
 		background: white;
 	}
@@ -84,4 +83,92 @@ body{
 			}
 			.info{
 				float: left;
+				margin: 1rem 1rem 1rem 0;
 			}
+				.info h6{
+					font-size: 1.5rem;
+					font-weight: 400;
+					line-height: 1.7rem;
+				}
+				.info p{
+					font-size: 1.2rem;
+					line-height: 1.7rem;
+				}
+				.numChange{
+					display: inline-block;
+					border: 0.1rem solid #e4e4e4;
+					margin-top: 0.3rem;
+				}
+					.numChange span{
+						font-size: 1.2rem;
+						display: inline-block;
+						width: 3rem;
+						height: 2rem;
+						color: #5c5c5c;
+						text-align: center;
+						line-height: 2rem;
+						color: #5c5c5c;
+					}
+					.numJian , .numJia{
+						background: #f7f7f7;
+					}
+			.del{
+				float: right;
+				margin: 1rem 1rem 1rem 0;
+
+			}
+				.del h6{
+					font-size: 1.2rem;
+					font-weight: 400;
+					position: absolute;
+					right: 1rem;
+				}
+				.del span{
+					display: inline-block;
+					color: #f05f50;
+					font-size: 1.2rem;
+					margin-top: 4rem;
+					position: absolute;
+					right: 1rem;
+				}
+.choose{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 5rem;
+	background: white;
+}
+	.chooseAll{
+		display: inline-block;
+		line-height: 5rem;
+	}
+	.chooseAll p{
+		display: inline-block;
+		line-height: 5rem;
+		font-size: 1.5rem;
+	}
+	.count{
+		float: right;
+	}
+		.moneySum{
+			display: inline-block;
+		}
+			.moneySum p{
+				line-height: 2rem;
+				font-size: 1.5rem;
+			}	
+			.moneySum i{
+				font-style: normal;
+				line-height: 2rem;
+				font-size: 1.2rem;
+				color: #f05f50;
+			}
+		.moneyCount{
+			display: inline-block;
+			width: 10rem;
+			background: #9a9a9a;
+			line-height: 5rem;
+			text-align: center;
+			font-size: 1.8rem;
+			color: white;
+		}
