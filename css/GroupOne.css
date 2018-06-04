@@ -1,0 +1,421 @@
+html,body {
+	font-size: 62.5%;
+}
+html,body,ul,li,a,img,p,div,input,h1,blockquote,h6{
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	height: 0;
+	content: "";
+}
+.top{
+	height: 3rem;
+	background: rgb(84,86,82);
+	line-height: 3rem;
+}
+	.top .top-bar{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.top .top-bar-b{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+		
+		.top .top-bar li , .top .top-bar-b li{
+			display: inline-block;
+			list-style: none;
+			padding: 0 1rem;
+		}
+			.top .top-bar li a , .top .top-bar-b li a{
+				font-size: 1.2rem;
+				color: white;
+				text-decoration: none;
+				color: #d5d5d5;
+			}
+.head-bar{
+	position: relative;
+	background: #f0f6f3;
+}
+	.head-bar-a{
+		float: left;
+		padding-left: 5rem;
+	}
+		.head-bar-a a{
+			color: #037b82;
+			font-size: 3rem;
+			text-decoration: none;
+			line-height: 7.4rem;
+			font-weight: 550;
+		}
+	.head-bar-b{
+		float: left;
+		padding-left: 3rem;
+	}
+		.head-bar-b ul li{
+			list-style: none;
+			float: left;
+			width: 5rem;
+			text-align: center;
+		}
+		.head-bar-b ul li a{
+			text-decoration: none;
+			font-size: 1.5rem;
+			color: #037b82;
+			line-height: 7.4rem;
+		}
+	.head-bar-c{
+		position: relative;
+	}
+		.head-bar-c input{
+			position: absolute;
+			right: 2.5rem;
+			top: 2.2rem;
+			width: 23.2rem;
+			height: 2.8rem;
+			padding-left: 1rem;
+			border: none;
+			display: inline-block;
+		}
+		.head-bar-c img{
+			position: absolute;
+			top: 3rem;
+			right: 3.5rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			float: right;
+		}
+.wrap{
+	/*width: 100%;*/
+}
+	.wrap-head h1{
+		color: #494949;
+		font-size: 2.6rem;
+		padding-top: 1.5rem;
+		line-height: 4.3rem;
+		padding-left: 4rem;
+	}
+	.wrap-content{
+		display: block;
+		width: 100%;
+	}
+		.wrap-content-left{
+			width: 60%;
+		}
+			.topic-content{
+				position: relative;
+			}
+				.topic-content-left{
+					position: absolute;
+					top: 0;
+					left: 4rem;
+				}
+				.topic-content-right{
+					position: absolute;
+					top: 0;
+					left: 10rem;
+				}
+					.topic-content-right-a{
+						line-height: 3rem;
+						font-size: 1.5rem;
+					}
+						.color-gray{
+							color: #666699;
+						}
+						.color-green{
+							color: #072;	
+						}
+						.color-gray a{
+							color: #666699;
+							text-decoration: none;
+						}
+					.topic-content-right-b{
+						color: black;
+						font-size: 1.3rem;
+						line-height: 3rem;
+					}
+					.topic-content-right-c{
+						
+					}
+						.topic-content-right-c h2{
+							font-size: 2.2rem;
+							font-weight: 550;
+							line-height: 3rem;
+						}
+						.topic-content-right-c blockquote{
+							color: #7b7b7b;
+						}
+					.topic-content-right-d{
+
+					}
+						.topic-content-right-d p{
+							font-weight: bold;
+							line-height: 4rem;
+							font-size: 1.3rem;
+						}
+						.topic-content-right-d img{
+							/*width: 50rem;*/
+						}
+						.topic-content-right-d div{
+							/*width: 50rem;*/
+							text-align: center;
+						}
+						.topic-content-right-d div a{
+							text-decoration: none;
+							color: #999;
+						}
+					.topic-content-right-e{
+
+					}
+						.topic-content-right-e h2{
+							font-size: 2.2rem;
+							font-weight: 550;
+							line-height: 3rem;
+						}
+						.vote{
+							margin-left: 2rem;
+							cursor: pointer;
+						}
+						.vote p{
+							color: #7b7b7b;
+							padding-left: 1rem;
+						}
+						.vote-list{
+							border: 0.1rem solid rgb(222,222,222);
+							margin: 1rem 0;
+							padding-left: 1rem;
+						}
+						.vote .vote-list h2{
+							font-size: 2.2rem;
+							color: #494949;
+						}
+						.vote .vote-list p{
+							display: inline-block;
+							color: #494949;
+						}
+						.vote .vote-list .color-a{
+							color: rgb(160,160,160);
+						}
+						.select-list{
+							padding-bottom: 2rem;
+							padding-top: 1rem;
+						}
+						.select-list span{
+							padding: 0 0.5rem;
+							line-height: 2rem;
+						}
+						.select-list label{
+							border-bottom: 0.1rem solid #dfdfdf;
+							font-size: 1.3rem;
+							display: flex;
+						}
+						.vote-but{
+							width: 7rem;
+							margin: 0 auto;
+							background: rgb(58,162,83);
+							text-align: center;
+						}
+						.vote-but a{
+							line-height: 3.4rem;
+							text-decoration: none;
+							color: white;
+							font-size: 1.4rem;
+						}
+						.check-ans{
+							/*width: 40rem;*/
+							margin: 0 auto;
+							text-align: center;
+						}
+						.check-ans p{
+							font-size: 1.2rem;
+							color: #494949;
+							line-height: 2.5rem;
+						}
+					.topic-content-right-f{
+						font-size: 1.3rem;
+						line-height: 1.6rem;
+					}
+					.topic-content-right-f p{
+						margin-bottom: 1rem;
+						margin-top: 1rem;
+					}
+					.topic-content-right-f img{
+						/*width: 50rem;*/
+					}
+					.topic-content-right-g{
+						position: absolute;
+						right: 1rem;
+						border: 1px solid #fad5b5;
+						line-height: 2.2rem;
+						background: #fbe9d9;
+					}
+					.topic-content-right-g a{
+						text-decoration: none;
+						padding: 0 1rem;
+						color: #ca6445;
+						font-size: 1.3rem;
+					}
+					.discuss-bar{
+						margin-top: 8rem;
+						padding-bottom: 1rem;
+						border-bottom: 0.1rem solid rgb(160,160,160);
+					}
+						.discuss-bar ul{
+							display: inline-block;
+						}
+						.discuss-bar ul li{
+							display: inline-block;
+							list-style: none;
+							padding: 0 1rem;
+						}
+						.discuss-bar .selected a{
+							background: rgb(131,191,115);
+							color: white;
+						}
+						.discuss-bar ul li a{
+							text-decoration: none;
+							padding: 0.5rem 1rem;
+							color: #37a;
+						}
+						.discuss-bar span {
+							position: absolute;
+							
+							right: 1rem;
+						}
+						.discuss-bar span a{
+							text-decoration: none;
+							color: #37a;
+						}
+					.discuss-content{
+						border: 0.1rem solid rgb(160,160,160);
+					}
+						.discuss-content-title{
+							line-height: 2rem;
+							font-size: 1.2rem;
+							background: rgb(230,230,230);
+							color: #666666;
+							padding-left: 1.5rem;
+						}
+						.discuss-content-a{
+							padding: 2rem 1.5rem;
+						}
+							.discuss-content-a img{
+								float: left;
+							}
+							.discuss-content-aa{
+								margin-left: 6rem;
+							}
+							.discuss-content-aa h6{
+								
+								background: #f0f6f3;
+								line-height: 2rem;
+								font-size: 1.2rem;
+								font-weight: 400;
+							}
+							.discuss-content-aa h6 a{
+								text-decoration: none;
+								color: #666699;
+							}
+							.discuss-content-aa p{
+								line-height: 4rem;
+								font-size: 1.2rem;
+							}
+							.discuss-content-aaa span a{
+								font-size: 1.2rem;
+								color: rgb(151,151,151);
+								text-decoration: none;
+							}
+							.aaaa{
+								float: right;
+							}
+
+
+		.wrap-content-right{
+			float: right;
+			width: 30%;
+		}
+				.wrap-content-right-a{
+					margin-top: 2rem;
+					border: 0.1rem solid rgb(238,238,238);
+				}
+					.wrap-content-right-a img{
+						width: 4.8rem;
+						float: left;
+						padding: 1rem 1rem;
+					}
+					.wrap-content-right-aa a{
+						margin-left: 1rem;
+						text-decoration: none;
+						line-height: 4.8rem;
+						color: #37a;
+						font-size: 1.5rem;
+					}
+					.wrap-content-right-aaa{
+						background: rgb(237,246,237);
+						padding: 1rem 5rem;
+					}
+					.wrap-content-right-aaa p{
+						line-height: 2rem;
+						color: #666;
+						font-size: 1.5rem;
+						line-height: 3rem;
+						margin-bottom: 1rem;
+					}
+					.wrap-content-right-aaa p em{
+						line-height: 3rem;
+						color: #370;
+						font-size: 1.5rem;
+					}
+					.wrap-content-right-aaa a{
+						padding: 0.5rem 1rem;
+						text-decoration: none;
+						color: #fff;
+						font-size: 1.5rem;
+						background: #3fa156;
+					}
+				.wrap-content-right-b{
+					margin-top: 2rem;
+					position: relative;
+				}
+					.wrap-content-right-b img{
+						width: 100%;
+					}
+					.ad-icon{
+						position: absolute;
+						bottom: 0;
+						right: 0;
+
+					}
+					.ad-icon a{
+						text-decoration: none;
+						color: white;
+						background: rgb(178,178,178);
+						padding: 0.5rem  0.5rem 0 0.5rem;
+					}
+				.wrap-content-right-c{
+
+				}
+					.wrap-content-right-c ul li{
+						list-style: none;
+						padding: 0.5rem 0;
+						border-bottom: 1px dashed #ddd;
+						font-size: 1.3rem;
+					}
+					.wrap-content-right-c a{
+						text-decoration: none;;
+						color: #37a;
+					}
+					.wrap-content-right-c p{
+						color: #666666;
+						line-height: 1.6rem;
+					}
+					.wrap-content-right-c img{
+						width: 20%;
+						float: left;
+						padding: 0 1rem;
+					}

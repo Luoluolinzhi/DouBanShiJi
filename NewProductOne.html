@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>豆瓣精品挂耳咖啡 - 豆瓣</title>
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/NewProductOne.css">
+</head>
+<body>
+	<div class="product-one">
+		<div class="ITK4wY04">
+			<img src="./image/2cc6f5f3e6f4803.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/0eccbc347842cbb.jpg ">
+		</div>
+		<div class="buy-but buyit">
+			<a href="#">立即购买</a>
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/56bcf6365f04f78.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/98e73f8867ef511.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/3bccf085b4b2009.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/4e7749394112188.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/c7c3bb948de3fa2.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/5eb1c6d9d78360f.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/63592dcd4dea3e2.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/b6b000474e15d89.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/42057b5f538ad4c.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/32c4f807832776a.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/18fd17411a722be.jpg">
+		</div>	
+		<div class="ITK4wY04">
+			<img src="./image/8af93f95552c618.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/08b54d8da7e06c7.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/ad8f12927822a05.jpg">
+		</div>	
+		<div class="ITK4wY04">
+			<img src="./image/042d844a738f59d.jpg">
+		</div>	
+		<div class="ITK4wY04">
+			<img src="./image/e8b258163f2b4f6.jpg">
+		</div>	
+		<div class="ITK4wY04">
+			<img src="./image/c0fc6bfbf2f79f6.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/8ee9c7debfe2669.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/2c7e81bb1473024.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/73fc13d17d22353.jpg">
+		</div>
+		<div class="ITK4wY04">
+			<img src="./image/d592faf461ef26d.jpg">
+		</div>
+		<div class="but-bottom">
+			<div class="but-bottom-a">
+				<a href="#">￥56一盒</a>
+			</div>
+			<div class="but-bottom-b buyit">
+				<a href="#">立即购买</a>
+			</div>
+		</div>
+		<div class="ceng hide">
+			<div class="product-list hide">
+				<div class="list">
+					<div class="p-close clearfix">
+						<p>X</p>
+					</div>
+					<div class="p-list clearfix	">
+						<img src="./image/p2031624.jpg">
+						<div class="p-intrp">
+							<div class="p-intrp-a">豆瓣精品挂耳咖啡-甜橙庄园系列</div>
+							<div class="p-intrp-b">￥56.00</div>
+							<div class="p-intrp-c">满 ￥88 包邮 </div>
+							<div class="p-intrp-d">已选 “甜橙庄园” </div>
+						</div>
+					</div>
+					<div class="p-choice">
+						<p>口味:</p>
+						<div>甜橙庄园</div>
+					</div>
+					<div class="p-num">
+						<p>数量:</p>
+						<div class="p-jiajian clearfix">
+							<div class="jian">-</div>
+							<div class="num">1</div>
+							<div class="jia">+</div>
+						</div>
+					</div>
+				</div>
+				<div class="p-buy clearfix">
+					<img src="./image/gouwuche.png">
+					
+					<div class="p-buy-a">立即购买</div>
+					<div class="p-buy-b">加入购物车</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- 点击立即购买 -->
+		<script type="text/javascript">
+			$(".jian").click(function(){
+		        var num = parseInt($(".num").text());
+		        if(num == 1){
+		          return false;
+		        }else {
+		           	$(".num").text(num-1)
+		        }
+		      })
+	        $(".jia").click(function(){
+	        	var num = parseInt($(".num").text());
+	        	$(".num").text(num+1)
+	      	})
+
+	        $(".buyit").click(function(){
+	        	$(".product-list").show()
+	        	$(".ceng").show()
+	        })
+	        $(".p-close p").click(function(){
+	        	$(".product-list").hide()
+	        	$(".ceng").hide()
+	        })
+		</script>
+	</div><!-- product-one -->
+</body>
+</html>

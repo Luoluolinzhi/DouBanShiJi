@@ -1,0 +1,82 @@
+html,body {
+	font-size: 62.5%;
+}
+html,body,ul,li,a,img,input {
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	height: 0;
+	content: "";
+}
+.douban-weixin{
+	/*width: 100%;*/
+}
+	.logo{
+		/*width: 68rem;*/
+		text-align: center;
+		margin: 4.5rem auto;
+	}
+		.logo img{
+			width: 6rem;
+			height: 6rem;
+		}
+	.putin{
+		width: 80%;
+		margin: 0 auto;
+	}
+		.putin input{
+			width: 100%;
+	  	height: 35px;
+  		line-height: 35px;
+  		border: none;
+ 	 		border-bottom: 0.1rem solid #BDBDBD;
+  		display: block;
+  		font-size: 1.5rem;
+  		padding: 1rem 0;
+    	}
+    .get-data{
+    	width: 80%;
+    	background: rgb(198,198,198);
+    	margin: 3rem auto;
+    	text-align: center;
+    }
+    	.get-data a{
+    		text-decoration: none;
+    		line-height: 4.5rem;
+    		font-size: 1.5rem;
+    		color: white;
+    	}
+   	.login-way{
+   		width: 80%
+    	margin: 0 auto;
+    	text-align: center;
+   	}
+   		.login-way ul{
+			
+   		}
+   		.login-way ul li{
+   			display: inline-block;
+   			list-style: none;
+        padding: 0 0.5rem;
+   		}
+   		.login-way ul li div{
+   			height: 1.5rem;
+   			border-right: 2px solid rgb(198,198,198);
+   			float: left;
+        margin-top: 0.5rem;
+   		}
+   		.login-way ul li a{
+   			text-decoration: none;
+   			font-size: 1.8rem;
+   			line-height: 2.2rem;
+        color: rgb(198,198,198);
+   		}
+   		.login-way ul li img{
+   			width: 2rem;
+   			height: 2rem;
+   			border-radius: 50%;
+   			float: left;
+   		}
