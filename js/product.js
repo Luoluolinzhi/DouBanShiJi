@@ -1,10 +1,11 @@
 $(function(){
 	 window.onload = function() {
-        var swiper = new Swiper('.swiper-container', {   
+        var swiper = new Swiper('.swiper-container', {  
+        	observer:true, 
             //循环            
             loop:true,
             //滚动速度
-            speed:2000,
+            speed:1000,
             //小手形状
             grabCursor : true,
             //自动播放
@@ -18,7 +19,7 @@ $(function(){
 		  	}
         })
     }
-    //购物说明
+    //点击"购物说明"
     $(".shopinfo").click(function(){
 		$(".ceng").show();
 		$(".shopInfoAlert").slideDown();
@@ -29,7 +30,7 @@ $(function(){
 		$(".ceng").hide();
 		$("body").removeClass("over")
 	})
-	//商务合作
+	//点击"商务合作"
 	 $(".shangwuhezuo").click(function(){
 		$(".shangWu").show();
 		$(".shangWuAlert").slideDown();
@@ -195,7 +196,8 @@ $(function(){
 	    }
 	}
 	$.ajax({
-		url: 'http://dbshop.com/index.php/Api/index/index',
+		url: 'http://dbshop.com/index.php/Api/index/index',	
+
 		dataType:'json',
 		type:'get',
 		success: function(res){
@@ -220,6 +222,13 @@ $(function(){
 		},
 		error: function(){
 			// alert("网络错误!");
+			//头部轮播图
+				var g = res.data.banner;
+				var imagesLists = "";
+				for (var j = 0; j < g.length; j++){
+					imagesLists += "<div class='swiper-slide'><img src='"+g[j].image+"'></div>";
+				}
+				$(".swiper-wrapper").html(imagesLists);
 			//商品列表
 				var t = res.data.goods;
 				var goodsLists = "";
