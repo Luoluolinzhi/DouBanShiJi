@@ -2,7 +2,7 @@ html,body {
 	font-size: 62.5%;
 
 }
-html,body,ul,li,a,img,p,div,h4,h6,strong,dl,dt,dd,h3{
+html,body,div,p,span,h6,strong,img{
 	margin: 0;
 	padding: 0;
 }
@@ -18,3 +18,203 @@ body{
 .hide{
 	display: none;
 }
+.address_tit{
+	line-height: 4rem;
+	margin-left: 1rem;
+	font-size: 1.5rem;
+	color: #9a9a9a;
+}
+.address{
+	background: #fff;
+	height: 7rem;
+}
+	.add{
+		text-align: center;
+	}
+		.add span{
+			display: inline-block;
+			margin-top: 1rem;
+			font-size: 2.5rem;
+			color: #9a9a9a;
+			font-weight: 300;
+		}
+		.add p{
+			font-size: 1.3rem;
+			color: #f05f50;
+		}
+	.addressInfo{
+		color: #505050;
+		border: 0.2rem solid #0aa082;
+	}	
+		.userName{
+			margin-left: 2rem;
+			margin-right: 2rem;
+			line-height: 2.5rem;
+			border-bottom: 0.2rem solid #e4e4e4;
+			font-size: 1.5rem;
+			padding-top: 1rem;
+			
+		}
+		.userAdderss{
+			margin-left: 2rem;
+			line-height: 3rem;
+			font-size: 1.2rem;
+		}
+.goosInfo{
+	margin-top: 1rem;
+	background: white;	
+	padding-bottom: 1rem;
+}
+	.tit{
+		font-size: 1.5rem;
+		line-height: 3rem;
+		padding-left: 2rem;
+		border-bottom: 0.2rem solid #e4e4e4;
+	}
+	.info{
+		position: relative;
+		padding-left: 8rem;
+	}
+		.info img{
+			width: 5rem;
+			padding: 0.8rem;
+			padding-left: 1rem;
+			position: absolute;
+			left: 0;
+		}
+		.infoList h6{
+			font-size: 1.5rem;
+			color: #494949;
+			line-height: 3rem;
+			font-weight: 400;
+		}
+		.infoList p, .infoList span{
+			color: #9a9a9a;
+			font-size: 1.2rem;
+			line-height: 1.6rem;
+		}
+		.infoList strong{
+			font-size: 1.5rem;
+			color: #9a9a9a;
+			line-height: 1.6rem;
+			float: right;
+			font-weight: 300;
+			margin-right: 1rem;
+		}
+.coupon{
+	margin-top: 0.5rem;
+	background: white;
+}
+	.couponTit{
+		border-bottom: 0.1rem solid rgb(247,247,247);
+	}
+		.couponLeft{
+			padding-left: 1rem;
+			color: #505050;
+			font-size: 1.5rem;
+			line-height: 3rem;
+		}
+		.couponRight{
+			float: right;
+			margin-right: 1rem;
+			color: #505050;
+			font-size: 1.5rem;
+			line-height: 3rem;
+		}
+.freight{
+	margin-top: 0.5rem;
+	background: white;
+	padding-bottom: 1rem;
+}
+	.freightCount{
+		border-bottom: 0.1rem solid rgb(247,247,247);
+	}
+		.bill .couponRight{
+			color: #e4e4e4;
+		}
+	.leaveWords{
+		padding: 0 1rem;
+		margin: 0 auto;
+	}
+		.leaveWords input{
+			width: 100%;
+			line-height: 2.5rem;
+			font-size: 1.3rem;
+			border: 0.1rem solid #e4e4e4;
+			color: #5c5c5c;
+			background: #F7F7F8;
+		}
+		input::-webkit-input-placeholder{ /*WebKit browsers*/
+			color: #9a9a9a;
+			padding-left: 1rem;
+		}
+		input::-moz-input-placeholder{ /*Mozilla Firefox*/
+			color: #9a9a9a;
+			padding-left: 1rem;
+		}
+		input::-ms-input-placeholder{ /*Internet Explorer*/ 
+			color: #9a9a9a;
+			padding-left: 1rem;
+		}
+		.leaveWords p{
+			color: #9a9a9a;
+			font-size: 1rem;
+			line-height: 1.8rem;
+		}
+.pay{
+	margin-top: 1rem;
+}
+	.pay p{
+		color: #505050;
+		line-height: 2rem;
+		font-size: 1.2rem;
+	}
+	.payType{
+		background: white;
+	}
+		.weixin{
+			border-bottom: 0.2rem solid rgb(247,247,247);
+		}
+			.payType input{
+				float: right;
+				margin-right: 1rem;
+				margin-top: 1rem;
+			}
+			.payType span{
+				font-size: 1.5rem;
+				line-height: 3rem;
+				color: #505050;
+			}
+			.payType img{
+				float: left;
+				margin: 0.7rem 1rem 0.2rem;
+			}
+.submit{
+	background: white;
+	line-height: 4rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 0.1rem solid rgb(236,236,236);
+	border-top: 0.1rem solid rgb(236,236,236);
+}
+	.need{
+		font-size: 1.5rem;
+		color: #505050;
+		margin-left: 1rem;
+	}
+	.countSum{
+		color: #f05f50;
+		font-weight: 700;
+		font-size: 1.5rem;
+	}
+	.submitBut{
+		display: inline-block;
+		float: right;
+		width: 10rem;
+		background: #f05f50;
+		color: white;
+		font-size: 1.8rem;
+		text-align: center;
+	}
