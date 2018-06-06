@@ -61,9 +61,6 @@ html,body,ul,li,a,img,p,div {
 		.but-bottom-b a{
 			color: white;
 		}
-	.list{
-		height: 49rem;
-	}
 	.p-close{
 		float: right;
 		font-size: 2rem;
@@ -85,6 +82,9 @@ html,body,ul,li,a,img,p,div {
 		position: fixed;
 		top: 0;
 	}
+	.over{
+		overflow: hidden;
+	}
 	.p-list{
 		background: white;
 	}
@@ -100,9 +100,13 @@ html,body,ul,li,a,img,p,div {
 			background: white;
 		}
 			.p-intrp-a{
+				width: 10rem;
 				font-size: 1.6rem;
 				color: #5c5c5c;
 				line-height: 2rem;
+				/*自动换行*/
+				word-wrap: break-word; 
+				word-break: normal; 
 			}
 			.p-intrp-b{
 				font-size: 1.6rem;
@@ -125,7 +129,6 @@ html,body,ul,li,a,img,p,div {
 		.p-choice p{
 			font-size: 1.5rem;
 			color: #5c5c5c; 
-			/*margin: 0rem 1rem;*/
 		}
 		.p-choice div{
 			display: inline-block;
@@ -133,19 +136,16 @@ html,body,ul,li,a,img,p,div {
 			color: #0aa082;
 			font-size: 1.5rem;
 			padding: 0.5rem 1rem;
-			/*margin: 0.5rem 1rem;*/
+			margin-top: 0.5rem;
 		}
 		.p-num{
-			/*margin: 1rem 0;*/
+			margin-top: 0.5rem;
 			background: white;
 		}
 		.p-num p{
 			font-size: 1.5rem;
 			color: #5c5c5c; 
 			margin: 0 1rem;
-		}
-		.p-jiajian{
-			/*margin: 0 1rem;*/
 		}
 		.jian , .num , .jia{
 			float: left; 
@@ -171,7 +171,7 @@ html,body,ul,li,a,img,p,div {
 		width: 2rem;
 		height: 2rem;
 		float: left;
-		/*margin: 1.3rem 1rem;*/
+		margin-top: 1.3rem;
 	}
 	.p-buy div{
 		float: right;
