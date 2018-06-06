@@ -1,0 +1,98 @@
+html,body {
+	font-size: 62.5%;
+
+}
+html,body,div,h1,input,p,a{
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	height: 0;
+	content: "";
+}
+.hide{
+	display: none;
+}
+.top{
+	width: 100%;
+	text-align: center;
+}
+	.top h1{
+		line-height: 8rem;
+		font-size: 4rem;
+		color: #42bd56;
+		font-weight: 300;
+	}
+.userInfo{
+	width: 90%;
+	margin: 0 auto;
+}
+	.userInfo div{
+		height: 4rem;
+		line-height: 4rem;
+		border: 0.1rem solid #d7d7d7;
+		color: #494949;
+		border-radius: 0.3rem;
+	}
+	.userInfo input{
+		background: #fff;		
+		border: 0 none;
+		outline: 0;
+		padding-left: 2rem;
+		font-size: 1.5rem;
+	}
+	input::-webkit-input-placeholder{ /*WebKit browsers*/
+		color: #ccc;
+	}
+	input::-moz-input-placeholder{ /*Mozilla Firefox*/
+		color: #ccc;
+	}
+	input::-ms-input-placeholder{ /*Internet Explorer*/ 
+		color: #ccc;
+	}
+	.passHide img{
+		float: right;
+		margin-top: 0.2rem;
+	}
+	.passSee img{
+		float: right;
+		margin-top: 0.4rem;
+		margin-right: 0.1rem;
+	}
+	.next{
+		margin-top: 1rem;
+		background: #42bd56;
+		line-height: 5rem;
+	}
+		.next p{
+			text-align: center;
+			color: #fff;
+			font-size: 1.5rem;
+		}
+.readXieYi{
+	width: 90%;
+	margin: 0 auto;
+	line-height: 4rem;
+	text-align: center;
+	font-size: 1.4rem;
+} 
+	.readXieYi p{
+		display: inline-block;
+		color: #ccc;
+	}
+	.readXieYi a{
+		text-decoration: none;
+		color: #ccc;
+	}
+.download{
+	width: 90%;
+	margin: 0 auto;
+	line-height: 4rem;
+	text-align: center;
+	font-size: 1.4rem;
+}
+	.download p{
+		color: #42bd56;
+	}

@@ -1,25 +1,5 @@
-$(function(){
-	 window.onload = function() {
-        var swiper = new Swiper('.swiper-container', {  
-        	observer:true, 
-            //循环            
-            loop:true,
-            //滚动速度
-            speed:1000,
-            //小手形状
-            grabCursor : true,
-            //自动播放
-            autoplay:true,
-            //触摸时翻页
-            paginationClickable: true,                
-            //分页圆点
-        	pagination :{
-		    	el: '.swiper-pagination',
-		    	clickable :true,
-		  	}
-        })
-    }
-    //点击"购物说明"
+$(function(){ 
+    //点击底部"购物说明"
     $(".shopinfo").click(function(){
 		$(".ceng").show();
 		$(".shopInfoAlert").slideDown();
@@ -30,7 +10,7 @@ $(function(){
 		$(".ceng").hide();
 		$("body").removeClass("over")
 	})
-	//点击"商务合作"
+	//点击底部"商务合作"
 	 $(".shangwuhezuo").click(function(){
 		$(".shangWu").show();
 		$(".shangWuAlert").slideDown();
@@ -42,7 +22,7 @@ $(function(){
 		$("body").removeClass("over");
 	});
 
-
+	//假数据渲染
 	var res = {
 	    "error_no":0,
 	    "msg":"",
@@ -197,7 +177,6 @@ $(function(){
 	}
 	$.ajax({
 		url: 'http://dbshop.com/index.php/Api/index/index',	
-
 		dataType:'json',
 		type:'get',
 		success: function(res){
@@ -238,6 +217,26 @@ $(function(){
 				$(".new-product-list").html(goodsLists);
 		}
 	})
+	//banner图片swiper轮播	
+    var swiper = new Swiper('.swiper-container', {  
+    	observer:true, 
+    	observeParents:true,
+        //循环            
+        loop:true,
+        //滚动速度
+        speed:1000,
+        //小手形状
+        grabCursor : true,
+        //自动播放
+        autoplay:true,
+        //触摸时翻页
+        paginationClickable: true,                
+        //分页圆点
+    	pagination :{
+	    	el: '.swiper-pagination',
+	    	clickable :true,
+	  	}
+    })
 
 });
 
