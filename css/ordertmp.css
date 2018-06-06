@@ -1,0 +1,20 @@
+html,body {
+	font-size: 62.5%;
+
+}
+html,body,ul,li,a,img,p,div,h4,h6,strong,dl,dt,dd,h3{
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	display: block;
+	clear: both;
+	height: 0;
+	content: "";
+}
+body{
+	background: rgb(247,247,247);
+}
+.hide{
+	display: none;
+}

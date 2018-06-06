@@ -378,7 +378,7 @@
 ## 临时订单
 **简要描述：** 
 
-- 修改购物车数量
+- 临时订单
 
 **请求URL：** 
 - ` http://my.blog.com/index.php/Api/order/ordertmp`
