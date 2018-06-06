@@ -143,12 +143,14 @@
 	      	})
 
 	        $(".buyit").click(function(){
-	        	$(".product-list").show()
-	        	$(".ceng").show()
+	        	$(".product-list").show();
+	        	$(".ceng").show();
+	        	$("body").addClass("over");
 	        })
 	        $(".p-close p").click(function(){
-	        	$(".product-list").hide()
-	        	$(".ceng").hide()
+	        	$(".product-list").hide();
+	        	$(".ceng").hide();
+	        	$("body").removeClass("over")
 	        })
 		</script>
 	</div><!-- product-one -->
