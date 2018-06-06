@@ -28,11 +28,8 @@ html,body,ul,li,a,img,p,div {
 		margin: 0 auto;
 		background: rgb(255,61,0);
 		text-align: center;
-
 	}
-
-		.buy-but a{
-			text-decoration: none;
+		.buy-but span{
 			font-size: 1.5rem;
 			color: white;
 			line-height: 4.5rem;
@@ -58,8 +55,10 @@ html,body,ul,li,a,img,p,div {
 			background: rgb(255,61,0); 
 			text-align: center;
 		}
-		.but-bottom-b a{
+		.but-bottom-b span{
+			font-size: 1.5rem;
 			color: white;
+			line-height: 4.5rem;
 		}
 	.p-close{
 		float: right;
@@ -73,6 +72,7 @@ html,body,ul,li,a,img,p,div {
         z-index: 105;  
         position: absolute;
         bottom: 0;    
+		overflow-y:auto;
 	}
 	.ceng{
 		width: 100%;
