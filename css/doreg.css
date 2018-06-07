@@ -52,11 +52,11 @@ html,body,div,h1,input,p,a{
 	input::-ms-input-placeholder{ /*Internet Explorer*/ 
 		color: #ccc;
 	}
-	.passHide img{
+	.a{
 		float: right;
 		margin-top: 0.2rem;
 	}
-	.passSee img{
+	.b{
 		float: right;
 		margin-top: 0.4rem;
 		margin-right: 0.1rem;

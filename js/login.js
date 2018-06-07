@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 	//密码可见or不可见
 	$(".a").click(function(){
 		$(".pas").attr("type","text");
@@ -10,33 +10,30 @@ $(function(){
 		$(".b").hide()
 		$(".a").show()
 	})
-	//点击"下一步"
+	//登录
 	$(".next").click(function(){
-		localStorage.setItem("phone",$(".phone").val());
-		localStorage.setItem("password",$(".pas").val());
 		localStorage.setItem("name",$(".name").val());
-		var phoneInfo = localStorage.getItem("phone");
+		localStorage.setItem("password",$(".pas").val());
 		var passwordInfo = localStorage.getItem("password");
-		var nameInfo = localStorage.getItem("name");
+		var name = localStorage.getItem("name");
 		$.ajax({
-			url: 'http://dbshop.com/index.php/Api/user/doreg',
+			url: 'http://dbshop.com/index.php/Api/user/dologin',
 			type: 'post',
 			dataType: 'json',
 			data: {
-				phone: phoneInfo,
 				password: passwordInfo,
-				username: nameInfo,
+				phone: name,
 			},
 			success: function(res){
-				if(res.error_no == 0){
-					//跳转到login界面
-					location.href="./login.html"
+				if (res.error_no == 0) {
+					//跳转到index界面
+					location.href="./index.html"
 				}else{
 					alert(res.msg)
 				}
 			},
 			error: function(){
-				alert("网络错误!");
+				alert("网络错误!")
 			}
 		})
 	})

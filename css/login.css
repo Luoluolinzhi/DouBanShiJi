@@ -1,7 +1,7 @@
 html,body {
 	font-size: 62.5%;
 }
-html,body,ul,li,a,img,input {
+html,body,ul,li,a,img,input,p,span{
 	margin: 0;
 	padding: 0;
 }
@@ -11,72 +11,91 @@ html,body,ul,li,a,img,input {
 	height: 0;
 	content: "";
 }
+.hide{
+  display: none;
+}
 .douban-weixin{
 	/*width: 100%;*/
 }
-	.logo{
-		/*width: 68rem;*/
-		text-align: center;
-		margin: 4.5rem auto;
-	}
-		.logo img{
-			width: 6rem;
-			height: 6rem;
-		}
-	.putin{
-		width: 80%;
-		margin: 0 auto;
-	}
-		.putin input{
-			width: 100%;
-	  	height: 35px;
-  		line-height: 35px;
-  		border: none;
- 	 		border-bottom: 0.1rem solid #BDBDBD;
-  		display: block;
-  		font-size: 1.5rem;
-  		padding: 1rem 0;
-    	}
-    .get-data{
-    	width: 80%;
-    	background: rgb(198,198,198);
-    	margin: 3rem auto;
-    	text-align: center;
+	.top{
+    line-height: 4rem;
+    border-bottom: 0.1rem solid #ddd;
+  }
+    .del{
+      float: left;
+      margin-left: 2rem;
+      color: #42bd56;
+      font-size: 1.4rem;
     }
-    	.get-data a{
-    		text-decoration: none;
-    		line-height: 4.5rem;
-    		font-size: 1.5rem;
-    		color: white;
-    	}
+    .topTit{
+      font-size: 1.8rem;
+      font-weight: 600;
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      margin-left: -7.2rem;
+    }
+  .userInfo{
+    width: 90%;
+    margin: 2rem auto;
+  }
+    .userInfo div{
+      height: 3rem;
+      line-height: 3rem;
+      border: 0.1rem solid #ccc;
+      color: #222;
+    }
+    .userInfo input{
+      background: #fff;   
+      border: 0 none;
+      outline: 0;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+    input::-webkit-input-placeholder{ /*WebKit browsers*/
+      color: #777;
+    }
+    input::-moz-input-placeholder{ /*Mozilla Firefox*/
+      color: #777;
+    }
+    input::-ms-input-placeholder{ /*Internet Explorer*/ 
+      color: #777;
+    }
+    .a{
+      float: right;
+      margin-top: 0.2rem;
+    }
+    .b{
+      float: right;
+      margin-top: 0.4rem;
+      margin-right: 0.1rem;
+    }
+    .next{
+      margin-top: 1rem;
+      background: #17AA52;
+      line-height: 4rem;
+    }
+      .next p{
+        text-align: center;
+        color: #fff;
+        font-size: 1.5rem;
+      }
    	.login-way{
    		width: 80%
     	margin: 0 auto;
     	text-align: center;
+      color: #aaa;
+      font-size: 1.5rem;
    	}
-   		.login-way ul{
-			
-   		}
-   		.login-way ul li{
-   			display: inline-block;
-   			list-style: none;
-        padding: 0 0.5rem;
-   		}
-   		.login-way ul li div{
-   			height: 1.5rem;
-   			border-right: 2px solid rgb(198,198,198);
-   			float: left;
-        margin-top: 0.5rem;
-   		}
-   		.login-way ul li a{
-   			text-decoration: none;
-   			font-size: 1.8rem;
-   			line-height: 2.2rem;
-        color: rgb(198,198,198);
-   		}
-   		.login-way ul li img{
-   			width: 2rem;
-   			height: 2rem;
-   			border-radius: 50%;
-   			float: left;
-   		}
+  .download{
+    width: 90%;
+    margin: 0 auto;
+    line-height: 8rem;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+    .download p{
+      display: inline-block;
+      color: #42bd56;
+    }
+   		
