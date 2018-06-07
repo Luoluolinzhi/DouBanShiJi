@@ -21,7 +21,6 @@ $(function(){
 		$(".shangWu").hide();
 		$("body").removeClass("over");
 	});
-
 	//假数据渲染
 	var res = {
 	    "error_no":0,
