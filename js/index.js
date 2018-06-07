@@ -1,26 +1,24 @@
-$(function(){ 
-    //点击底部"购物说明"
-    $(".shopinfo").click(function(){
-		$(".ceng").show();
-		$(".shopInfoAlert").slideDown();
-		$("body").addClass("over");
-	})
-	$(".iKnowm").click(function(){
-		$(".shopInfoAlert").slideUp();
-		$(".ceng").hide();
-		$("body").removeClass("over")
-	})
-	//点击底部"商务合作"
-	 $(".shangwuhezuo").click(function(){
-		$(".shangWu").show();
-		$(".shangWuAlert").slideDown();
-		$("body").addClass("over");
-	})
-	$(".closeX").click(function(){
-		$(".shangWuAlert").slideUp();
-		$(".shangWu").hide();
-		$("body").removeClass("over");
-	});
+$(function(){  
+	//banner图片swiper轮播	
+    var swiper = new Swiper('.swiper-container', {  
+    	observer:true, 
+    	observeParents:true,
+        //循环            
+        loop:true,
+        //滚动速度
+        speed:1000,
+        //小手形状
+        grabCursor : true,
+        //自动播放
+        autoplay:true,
+        //触摸时翻页
+        paginationClickable: true,                
+        //分页圆点
+    	pagination :{
+	    	el: '.swiper-pagination',
+	    	clickable :true,
+	  	}
+    })
 	//假数据渲染
 	var res = {
 	    "error_no":0,
@@ -191,51 +189,60 @@ $(function(){
 				var t = res.data.goods;
 				var goodsLists = "";
 				for(var i = 0; i < t.length; i++){
-					goodsLists += "<div class='new-product-list-a'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
+					goodsLists += "<div class='new-product-list-a' data-id='"+t[i].id+"'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
 				}
 				$(".new-product-list").html(goodsLists);
+				$(".new-product-list-a").click(function(){
+			        localStorage.setItem("id",$(this).data("id"));
+			        location.href = "./detail.html";
+				})
 			}else{
 				alert(res.msg);
 			}
 		},
 		error: function(){
-			// alert("网络错误!");
+			alert("网络错误!");
 			//头部轮播图
-				var g = res.data.banner;
-				var imagesLists = "";
-				for (var j = 0; j < g.length; j++){
-					imagesLists += "<div class='swiper-slide'><img src='"+g[j].image+"'></div>";
-				}
-				$(".swiper-wrapper").html(imagesLists);
+			var g = res.data.banner;
+			var imagesLists = "";
+			for (var j = 0; j < g.length; j++){
+				imagesLists += "<div class='swiper-slide'><img src='"+g[j].image+"'></div>";
+			}
+			$(".swiper-wrapper").html(imagesLists);
 			//商品列表
-				var t = res.data.goods;
-				var goodsLists = "";
-				for(var i = 0; i < t.length; i++){
-					goodsLists += "<div class='new-product-list-a'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
-				}
-				$(".new-product-list").html(goodsLists);
+			var t = res.data.goods;
+			var goodsLists = "";
+			for(var i = 0; i < t.length; i++){
+				goodsLists += "<div class='new-product-list-a' data-id='"+t[i].id+"'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
+			}
+			$(".new-product-list").html(goodsLists);
+			$(".new-product-list-a").click(function(){
+		        localStorage.setItem("id",$(this).data("id"));
+		        location.href = "./detail.html";
+			})
 		}
 	})
-	//banner图片swiper轮播	
-    var swiper = new Swiper('.swiper-container', {  
-    	observer:true, 
-    	observeParents:true,
-        //循环            
-        loop:true,
-        //滚动速度
-        speed:1000,
-        //小手形状
-        grabCursor : true,
-        //自动播放
-        autoplay:true,
-        //触摸时翻页
-        paginationClickable: true,                
-        //分页圆点
-    	pagination :{
-	    	el: '.swiper-pagination',
-	    	clickable :true,
-	  	}
-    })
-
+       //点击底部"购物说明"
+    $(".shopinfo").click(function(){
+		$(".ceng").show();
+		$(".shopInfoAlert").slideDown();
+		$("body").addClass("over");
+	})
+	$(".iKnowm").click(function(){
+		$(".shopInfoAlert").slideUp();
+		$(".ceng").hide();
+		$("body").removeClass("over")
+	})
+	//点击底部"商务合作"
+	 $(".shangwuhezuo").click(function(){
+		$(".shangWu").show();
+		$(".shangWuAlert").slideDown();
+		$("body").addClass("over");
+	})
+	$(".closeX").click(function(){
+		$(".shangWuAlert").slideUp();
+		$(".shangWu").hide();
+		$("body").removeClass("over");
+	})
 });
 
