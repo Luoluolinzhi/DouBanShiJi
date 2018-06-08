@@ -26,14 +26,15 @@ $(function () {
 			},
 			success: function(res){
 				if (res.error_no == 0) {
+					alert("登录成功!");
 					//跳转到index界面
-					location.href="./index.html"
+					location.href="./index.html";
 				}else{
-					alert(res.msg)
+					alert(res.msg);
 				}
 			},
 			error: function(){
-				alert("网络错误!")
+				alert("网络错误!");
 			}
 		})
 	})

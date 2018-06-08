@@ -250,7 +250,7 @@
 - 购物车列表
 
 **请求URL：** 
-- ` http://my.blog.com/index.php/Api/cart/addcart`
+- ` http://my.blog.com/index.php/Api/cart/cartlist`
   
 **请求方式：**
 - POST

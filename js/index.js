@@ -244,5 +244,25 @@ $(function(){
 		$(".shangWu").hide();
 		$("body").removeClass("over");
 	})
+    //点击"购物车",如果未登录，则跳转到登录界面，如果已经登录，则跳转到购物车界面
+    // $(".cart").click(function(){
+    // 	$.ajax({
+    // 		url: 'http://dbshop.com/index.php/Api/cart/cartlist',
+    // 		type: 'post',
+    // 		dataType: 'json',
+    // 		success: function(res){
+    // 			if (res.error_no == 0) {
+    // 				location.href = "./cart.html"
+    // 			}else if(res.error_no == 2){
+    // 				location.href = "./login.html"
+    // 			}else{
+    // 				alert(res.msg)
+    // 			}
+    // 		},
+    // 		error: function(){
+    // 			alert("网络错误!")
+    // 		}
+    // 	})
+    // })
 });
 
