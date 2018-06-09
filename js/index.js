@@ -192,9 +192,12 @@ $(function(){
 					goodsLists += "<div class='new-product-list-a' data-id='"+t[i].id+"'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
 				}
 				$(".new-product-list").html(goodsLists);
+				//点击商品进入到对应商品详情页
 				$(".new-product-list-a").click(function(){
-			        localStorage.setItem("id",$(this).data("id"));
-			        location.href = "./detail.html";
+					//商品id存在localStorage
+			        // localStorage.setItem("id",$(this).data("id"));
+			        //商品id在链接跳转时拼上去
+			        location.href = "./detail.html?id="+$(this).data("id");
 				})
 			}else{
 				alert(res.msg);
@@ -216,9 +219,12 @@ $(function(){
 				goodsLists += "<div class='new-product-list-a' data-id='"+t[i].id+"'><div class='new-product-list-a-img'><img src='"+t[i].image+"'></div><div class='new-product-list-a-content'><h4>"+t[i].goods_name+"</h4><p>"+t[i].goods_info+"</p><strong>￥"+t[i].price/100+"</strong><a>"+t[i].tag_id+"</a></div></div>";
 			}
 			$(".new-product-list").html(goodsLists);
+			//点击商品进入到对应商品详情页
 			$(".new-product-list-a").click(function(){
-		        localStorage.setItem("id",$(this).data("id"));
-		        location.href = "./detail.html";
+				//商品id存在localStorage
+		        // localStorage.setItem("id",$(this).data("id"));
+		        //商品id在链接跳转时拼上去
+		        location.href = "./detail.html?id="+$(this).data("id");
 			})
 		}
 	})

@@ -12,20 +12,24 @@ $(function () {
 	})
 	//登录
 	$(".next").click(function(){
-		localStorage.setItem("name",$(".name").val());
-		localStorage.setItem("password",$(".pas").val());
-		var passwordInfo = localStorage.getItem("password");
-		var name = localStorage.getItem("name");
+		//获得用户输入的用户账号、密码
+		var name = $(".name").val();
+		var passwordInfo = $(".pas").val();
 		$.ajax({
 			url: 'http://dbshop.com/index.php/Api/user/dologin',
 			type: 'post',
 			dataType: 'json',
 			data: {
 				password: passwordInfo,
-				phone: name,
+				phone: name, 
 			},
 			success: function(res){
+				console.log(res);
 				if (res.error_no == 0) {
+					//用户登录成功后，将用户id、用户昵称、用户账号存入localStorage
+					localStorage.setItem("token",res.data.info.id);
+					localStorage.setItem("name",res.data.info.name);
+					localStorage.setItem("phone",res.data.info.phone);
 					alert("登录成功!");
 					//跳转到index界面
 					location.href="./index.html";

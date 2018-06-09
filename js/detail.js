@@ -39,7 +39,9 @@ $(function(){
         }
     }
     //从localStorage里获得对应商品的id
-    var id_no = localStorage.getItem("id")
+    // var id_no = localStorage.getItem("id")
+    //将主页传过来的id取出来，调详情页接口时传给后端
+    var id_no = location.href.split("=")[1]; //以"="分割成数组，去第二个([1])
     $.ajax({
     	url: 'http://dbshop.com/index.php/Api/goods/info',
     	type: 'get',
@@ -82,6 +84,11 @@ $(function(){
     })
     //点击加入购物车
     $(".p-buy-b").click(function(){
-        
+        var userId = localStorage.getItem("token");
+        if(!userId){
+            location.href="./login.html";
+        }else{
+            alert(111)
+        }
     })
 })
