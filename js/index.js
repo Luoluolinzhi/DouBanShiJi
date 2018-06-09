@@ -251,24 +251,29 @@ $(function(){
 		$("body").removeClass("over");
 	})
     //点击"购物车",如果未登录，则跳转到登录界面，如果已经登录，则跳转到购物车界面
-    // $(".cart").click(function(){
-    // 	$.ajax({
-    // 		url: 'http://dbshop.com/index.php/Api/cart/cartlist',
-    // 		type: 'post',
-    // 		dataType: 'json',
-    // 		success: function(res){
-    // 			if (res.error_no == 0) {
-    // 				location.href = "./cart.html"
-    // 			}else if(res.error_no == 2){
-    // 				location.href = "./login.html"
-    // 			}else{
-    // 				alert(res.msg)
-    // 			}
-    // 		},
-    // 		error: function(){
-    // 			alert("网络错误!")
-    // 		}
-    // 	})
-    // })
+    $(".cart").click(function(){
+    	//从localStorage里取出用户id
+        var userId = localStorage.getItem("token");
+        //判断用户id存不存在，即用户是否登录
+        if(!userId){
+            //如果未登录，跳转到登录界面
+            location.href="./login.html";
+        }else{
+            //如果登录，则跳转到购物车页面
+            location.href = "./cart.html";
+        }
+    })
+    $(".myDouban").click(function(){
+    	//从localStorage里取出用户id
+        var userId = localStorage.getItem("token");
+        //判断用户id存不存在，即用户是否登录
+        if(!userId){
+            //如果未登录，跳转到登录页面
+            location.href="./login.html";
+        }else{
+            //如果登录，则跳转到我的市集页面
+            location.href = "./myDouBan.html";
+        }
+    })
 });
 

@@ -1,0 +1,116 @@
+html,body {
+	font-size: 62.5%;
+}
+body,div,h3,img,p,span,i,ul,li{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #f7f7f7;
+	color: #494949;
+}
+.clearfix::after{
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+}
+.top{
+	background: #0aa082;
+	padding-right: 2rem;
+	padding-left: 2rem;
+	height: 4rem;
+	line-height: 4rem;
+}
+	.topHead{
+		display: inline-block;
+		font-size: 2rem;
+		color: white;
+	}
+	.top div{
+		display: inline-block;
+	}
+	.topImg{
+		display: inline-block;
+		float: right;
+	}
+		.topImg img{
+			display: inline-block;
+			margin-left: 1rem;
+			width: 2rem;
+		}
+.userInfo{
+	text-align: center;
+}
+	.userInfo img{
+		margin-top: 3rem;
+		width: 9rem;
+	}
+	.userInfo p{
+		font-size: 1.5rem;
+	}
+.order{
+	background: white;
+}
+	.checkAll{
+		margin-top: 1rem;
+		border-bottom: 0.2rem solid #e4e4e4;
+		line-height: 3.5rem;
+		font-size: 1.5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+		.checkAll i{
+			font-style: normal;
+			float: right;
+		}
+	.checkIcon{
+		padding: 1rem 0;
+	}
+		.checkIcon ul li{
+			float: left;
+			list-style: none;
+			width: 25%;
+			text-align: center;
+		}
+		.checkIcon ul li img{
+			width: 2rem;
+		}
+		.checkIcon ul li p{
+			line-height: 2rem;
+			font-size: 1.5rem;
+		}
+.my{
+	background: white;
+	margin-top: 1rem;
+}
+	.myCoupon{
+		border-bottom: 0.2rem solid #e4e4e4;
+		line-height: 3.5rem;
+		font-size: 1.5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	.myCoupon i{
+		font-style: normal;
+		float: right;
+	}
+	.myAdderss{
+		line-height: 3.5rem;
+		font-size: 1.5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+	.myAdderss i{
+		font-style: normal;
+		float: right;
+	}
+.signOut{
+	text-align: center;
+}
+	.signOut a{
+		text-decoration: none;
+		font-size: 1.5rem;
+		line-height: 4rem;
+		color: #494949;
+	}

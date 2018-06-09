@@ -95,8 +95,11 @@ $(function(){
             location.href="./login.html?referurl="+currentUrl;
         }else{
             //如果登录，则将商品加入到购物车
+            alert("成功加入到购物车！");
             //获得商品数量
-            var goodsNum = parseInt($(".num").text());            
+            var goodsNum = parseInt($(".num").text());
+            console.log(goodsNum);
+            console.log(id_no);
             $.ajax({
                 url: 'http://dbshop.com/index.php/Api/cart/addcart',
                 type: 'post',
@@ -104,11 +107,12 @@ $(function(){
                 data: {
                     goods_id: id_no,
                     goods_num: goodsNum,
-                    token:userId,
                 },
                 success: function(res){
+                    console.log(000);
                     if(res.error_no == 0){
-                        alert("成功加入到购物车！");
+                        console.log(goodsNum);
+                        console.log(res);
                     }else{
                         alert(res.msg);
                     }
@@ -121,7 +125,7 @@ $(function(){
     });
     //点击立即购买
     $(".p-buy-a").click(function(){
-        //从localStorage里取出用户id
+         //从localStorage里取出用户id
         var userId = localStorage.getItem("token");
         //判断用户id存不存在，即用户是否登录
         if(!userId){
