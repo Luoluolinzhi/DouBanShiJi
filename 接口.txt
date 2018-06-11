@@ -1,0 +1,12 @@
+﻿首页：http://dbshop.com/index.php/Api/index/index
+详情：http://dbshop.com/index.php/Api/goods/info
+登陆：http://dbshop.com/index.php/Api/user/dologin
+注册：http://dbshop.com/index.php/Api/user/doreg
+加入购物车：http://dbshop.com/index.php/Api/cart/addcart
+购物车列表：http://dbshop.com/index.php/Api/cart/cartlist
+修改购物车数量：http://dbshop.com/index.php/Api/cart/edit
+删除购物车：http://dbshop.com/index.php/Api/cart/del
+新建收货地址:http://dbshop.com/index.php/Api/address/add
+临时订单：http://dbshop.com/index.php/Api/order/ordertmp
+确认订单：http://dbshop.com/index.php/Api/order/confirm
+下单接口：http://dbshop.com/index.php/Api/order/create

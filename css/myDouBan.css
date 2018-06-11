@@ -39,6 +39,13 @@ body{
 			margin-left: 1rem;
 			width: 2rem;
 		}
+		.numAll{
+			font-style: normal;
+			font-size: 0.5rem;
+			color: white;
+			position: relative;
+			top: -1rem;
+		}
 .userInfo{
 	text-align: center;
 }

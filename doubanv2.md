@@ -12,12 +12,13 @@
 - ` http://my.douban.com/index.php/Api/index/index  `
 
 **请求方式：**
-- GET
+- POST
 
 **参数：** 
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
+|:token    |:是|:string |用户id   |
 
 
  **返回示例**
@@ -27,6 +28,7 @@
     "error_no": 0,
     "message": "success",
     "data": {
+        cart_no:,
         "banner" : [
            {
               "id" : 10,

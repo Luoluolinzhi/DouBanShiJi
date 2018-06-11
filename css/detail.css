@@ -1,7 +1,7 @@
 html,body {
 	font-size: 62.5%;
 }
-html,body,ul,li,a,img,p,div {
+html,body,ul,li,a,img,p,div,i {
 	margin: 0;
 	padding: 0;
 }
@@ -187,3 +187,10 @@ html,body,ul,li,a,img,p,div {
 			color: #5c5c5c;
 			border-left: 1px solid rgb(235,235,235);
 		}
+	.numAll{
+		font-style: normal;
+		font-size: 0.5rem;
+		color: #ff966b;
+		position: relative;
+		top: 1rem;
+	}

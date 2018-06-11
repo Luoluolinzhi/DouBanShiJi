@@ -2,7 +2,7 @@ html,body {
 	font-size: 62.5%;
 
 }
-html,body,ul,li,a,img,p,div,h4,h6,strong,dl,dt,dd,h3{
+html,body,ul,li,a,img,p,div,h4,h6,strong,dl,dt,dd,h3,i{
 	margin: 0;
 	padding: 0;
 }
@@ -130,9 +130,18 @@ body{
 		font-size: 1.7rem;
 		color: #000;
 		line-height: 3rem;
+		color: #5c5c5c;
 	}
 	.user-bar ul li img{
 		width: 2rem;
+	}
+	.user-bar ul li i{
+		font-style: normal;
+		font-size: 0.5rem;
+		color: #ff966b;
+		position: relative;
+		top: -1rem;
+		left: -0.5rem;
 	}
 .new-product{
 	width: 100%;

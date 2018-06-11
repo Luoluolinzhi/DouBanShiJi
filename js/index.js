@@ -171,11 +171,16 @@ $(function(){
 	            }
 	        ]
 	    }
-	}
+	};
+	//从localStorage里取出用户id
+	var userId = localStorage.getItem("token");
 	$.ajax({
 		url: 'http://dbshop.com/index.php/Api/index/index',	
 		dataType:'json',
-		type:'get',
+		type:'post',
+		data: {
+			token: userId,
+		},
 		success: function(res){
 			if(res.error_no == 0){
 				//头部轮播图
@@ -198,7 +203,14 @@ $(function(){
 			        // localStorage.setItem("id",$(this).data("id"));
 			        //商品id在链接跳转时拼上去
 			        location.href = "./detail.html?id="+$(this).data("id");
-				})
+				});
+				//如果登录，购物车显示总数
+				if(userId){
+			        var num = res.data.cart_num;
+			        $(".numAll").append(num);
+			    }else{
+			    	$(".numAll").html("");
+			    }
 			}else{
 				alert(res.msg);
 			}
@@ -226,9 +238,9 @@ $(function(){
 		        //商品id在链接跳转时拼上去
 		        location.href = "./detail.html?id="+$(this).data("id");
 			})
-		}
-	})
-       //点击底部"购物说明"
+		},
+	});
+    //点击底部"购物说明"
     $(".shopinfo").click(function(){
 		$(".ceng").show();
 		$(".shopInfoAlert").slideDown();
@@ -253,7 +265,7 @@ $(function(){
     //点击"购物车",如果未登录，则跳转到登录界面，如果已经登录，则跳转到购物车界面
     $(".cart").click(function(){
     	//从localStorage里取出用户id
-        var userId = localStorage.getItem("token");
+        // var userId = localStorage.getItem("token");
         //判断用户id存不存在，即用户是否登录
         if(!userId){
             //如果未登录，跳转到登录界面
@@ -265,7 +277,7 @@ $(function(){
     })
     $(".myDouban").click(function(){
     	//从localStorage里取出用户id
-        var userId = localStorage.getItem("token");
+        // var userId = localStorage.getItem("token");
         //判断用户id存不存在，即用户是否登录
         if(!userId){
             //如果未登录，跳转到登录页面

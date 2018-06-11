@@ -47,12 +47,15 @@ $(function(){
     args = GetUrlParms();
     //从url获取参数id
     var id_no = args.id;
+    //从localStorage里取出用户id
+    var userId = localStorage.getItem("token");
     $.ajax({
     	url: 'http://dbshop.com/index.php/Api/goods/info',
     	type: 'get',
     	dataType: 'json',
     	data:{
-    		id : id_no
+    		id : id_no,
+            token: userId,
     	},
     	success: function(res){
     		if (res.error_no ==0) {
@@ -65,8 +68,32 @@ $(function(){
                 var goodsInfo = "";
                 goodsInfo += "<div class='p-list clearfix'><img src='"+g.image+"'><div class='p-intrp'><div class='p-intrp-a'>"+g.title+"</div><div class='p-intrp-b'>￥"+g.price/100+"</div><div class='p-intrp-c'>满 ￥88 包邮 </div><div class='p-intrp-d'>已选 “森林绿” </div></div></div><div class='p-choice'><p>款式:</p><div>森林绿</div></div></div>";
                 $(".goodsInfo").append(goodsInfo);
+                //如果登录，购物车显示总数
+                if(userId){
+                    $.ajax({
+                        url: 'http://dbshop.com/index.php/Api/index/index', 
+                        dataType:'json',
+                        type:'post',
+                        data: {
+                            token: userId,
+                        },
+                        success: function(res){
+                            if (res.error_no == 0) {
+                                var num = res.data.cart_num;
+                                $(".numAll").append(num);
+                            }else{
+                                alert(res.msg);
+                            }
+                        },
+                        error: function(){
+                            alert("网络错误!");
+                        }
+                    });
+                }else{
+                    $(".numAll").html("");
+                }
     		}else{
-    			alert(res.msg)
+    			alert(res.msg);
     		}
     	},
     	error: function(){
@@ -116,7 +143,27 @@ $(function(){
                 error:function(){
                     alert("网络错误!");
                 }
-            })
+            });
+            $.ajax({
+                url: 'http://dbshop.com/index.php/Api/index/index', 
+                dataType:'json',
+                type:'post',
+                data: {
+                    token: userId,
+                },
+                success: function(res){
+                    if (res.error_no == 0) {
+                        var num = res.data.cart_num;
+                        $(".numAll").html(num);
+                    }else{
+                        alert(res.msg);
+                    }
+                },
+                error: function(){
+                    alert("网络错误!");
+                }
+            });
+                
         }
     });
     //点击立即购买
