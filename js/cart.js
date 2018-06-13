@@ -91,28 +91,86 @@ $(function(){
 		           		}
 		           	})
 			  	});
-				//勾选
+			// //勾选
+				// $(".checkIconSpan").click(function(){
+				// 	// $(this).toggleClass("checkedIcon");
+				// 	if($(this).hasClass("checkedIcon")){
+				// 		$(this).removeClass("checkedIcon");
+				// 		$(".all").removeClass("checkedIcon");
+				// 	}else{
+				// 		$(this).addClass("checkedIcon");
+				// 	}
+				// });
+				// //全选
+				// $(".all").click(function(){
+				// 	// $(this).toggleClass("checkedIcon");
+				// 	// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
+				// 	if($(this).hasClass("checkedIcon")){
+				// 		$(this).removeClass("checkedIcon");
+				// 		$(".checkIconSpan").removeClass("checkedIcon");
+				// 		$(".all").removeClass("checkedIcon");
+				// 	}else{
+				// 		$(this).addClass("checkedIcon");
+				// 		$(".checkIconSpan").addClass("checkedIcon");
+				// 		$(".all").addClass("checkedIcon");
+				// 	}
+			// });
+			//勾选单个商品
+				var goodsNum = 0;
+				var allPrice = 0;
 				$(".checkIconSpan").click(function(){
-					// $(this).toggleClass("checkedIcon");
-					if($(this).hasClass("checkedIcon")){
-						$(this).removeClass("checkedIcon");
-						$(".all").removeClass("checkedIcon");
-					}else{
+					if(!$(this).hasClass("checkedIcon")){
 						$(this).addClass("checkedIcon");
+						if(goodsNum >= res.data.cart.length){
+							goodsNum = res.data.cart.length;
+						}else{
+							goodsNum = goodsNum + 1;
+						}
+						if(goodsNum == res.data.cart.length){
+							$(".all").addClass("checkedIcon");
+						}else{
+							$(".all").removeClass("checkedIcon");
+						}
+						$(".moneyCount p").text("结算");
+						$(".moneyCount").css({'background-color':'#f05f50'});
+						var onePrice = Number($(this).siblings(".goodsInfo").children(".numChange").siblings(".num").text());
+						var oneNum = Number($(this).siblings(".goodsInfo").children(".del").siblings("span").text());
+						console.log(oneNum)
+						console.log(oneNum)
+						allPrice = allPrice + oneNum * onePrice;
+						$(".allPrice").text("￥"+allPrice+".00");
+					}else{
+						$(this).removeClass("checkedIcon");
+						if(goodsNum<0){
+							goodsNum = 0;
+						}else{
+							goodsNum = goodsNum - 1;
+						}
+						$(".all").removeClass("checkedIcon");
 					}
 				});
 				//全选
 				$(".all").click(function(){
-					// $(this).toggleClass("checkedIcon");
-					// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
-					if($(this).hasClass("checkedIcon")){
-						$(this).removeClass("checkedIcon");
-						$(".checkIconSpan").removeClass("checkedIcon");
-						$(".all").removeClass("checkedIcon");
-					}else{
-						$(this).addClass("checkedIcon");
-						$(".checkIconSpan").addClass("checkedIcon");
+					if($(".moneyCount p").text()=="请选择"){
 						$(".all").addClass("checkedIcon");
+						$(".checkIconSpan").addClass("checkedIcon");
+						$(".allTap").text("取消");
+						$(".moneyCount p").text("结算");
+						$(".moneyCount").css({'background-color':'#f05f50'});
+						//结算全部金额
+						for(var i = 0; i <res.data.cart.length; i++){
+							allPrice += g[i].goods_num*(g[i].goods_price/100);
+						}
+						$(".allPrice").text("￥"+allPrice+".00");
+						goodsNum = res.data.cart.length;
+					}else{
+						$(".all").removeClass("checkedIcon");
+						$(".checkIconSpan").removeClass("checkedIcon");
+						$(".allTap").text("全选");
+						$(".moneyCount p").text("请选择");
+						$(".moneyCount").css({'background-color':'#9a9a9a'});
+						$(".allPrice").text("￥0.00");
+						goodsNum = 0;
 					}
 				});
 				//删除
@@ -187,30 +245,30 @@ $(function(){
 		    	var idNo = $(this).closest(".goodsList").data("id");
 		    	$(this).prev(".num").text(num+1);
 		  	});
-			//勾选
-			$(".checkIconSpan").click(function(){
-				// $(this).toggleClass("checkedIcon");
-				if($(this).hasClass("checkedIcon")){
-					$(this).removeClass("checkedIcon");
-					$(".all").removeClass("checkedIcon");
-				}else{
-					$(this).addClass("checkedIcon");
-				}
-			});
-			//全选
-			$(".all").click(function(){
-				// $(this).toggleClass("checkedIcon");
-				// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
-				if($(this).hasClass("checkedIcon")){
-					$(this).removeClass("checkedIcon");
-					$(".checkIconSpan").removeClass("checkedIcon");
-					$(".all").removeClass("checkedIcon");
-				}else{
-					$(this).addClass("checkedIcon");
-					$(".checkIconSpan").addClass("checkedIcon");
-					$(".all").addClass("checkedIcon");
-				}
-			});
+			// //勾选
+			// $(".checkIconSpan").click(function(){
+			// 	// $(this).toggleClass("checkedIcon");
+			// 	if($(this).hasClass("checkedIcon")){
+			// 		$(this).removeClass("checkedIcon");
+			// 		$(".all").removeClass("checkedIcon");
+			// 	}else{
+			// 		$(this).addClass("checkedIcon");
+			// 	}
+			// });
+			// //全选
+			// $(".all").click(function(){
+			// 	// $(this).toggleClass("checkedIcon");
+			// 	// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
+			// 	if($(this).hasClass("checkedIcon")){
+			// 		$(this).removeClass("checkedIcon");
+			// 		$(".checkIconSpan").removeClass("checkedIcon");
+			// 		$(".all").removeClass("checkedIcon");
+			// 	}else{
+			// 		$(this).addClass("checkedIcon");
+			// 		$(".checkIconSpan").addClass("checkedIcon");
+			// 		$(".all").addClass("checkedIcon");
+			// 	}
+			// });
 		}
 	})
 	
