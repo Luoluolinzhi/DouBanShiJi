@@ -37,10 +37,10 @@ $(function(){
 				var goodsStr = "";
 				var g = res.data.cart;
 				for(var i=0; i<g.length; i++){
-					goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span>￥"+g[i].goods_price/100+".00</span></div></div></div>";
+					goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span>￥</span><span class='goodsPrice'>"+g[i].goods_price/100+".00</span></div></div></div>";
 				}
 				$(".goodsLists").html(goodsStr);
-				//数量的增减
+				//数量的减
 			 	$(".numJian").click(function(){
 			        var num = parseInt($(this).next(".num").text());
 			        var idNo = $(this).closest(".goodsList").data("id");
@@ -68,6 +68,7 @@ $(function(){
 			           	})
 			        }
 			    });
+			    //数量的增
 			    $(".numJia").click(function(){
 			    	var num = parseInt($(this).prev(".num").text());
 			    	var idNo = $(this).closest(".goodsList").data("id");
@@ -91,31 +92,7 @@ $(function(){
 		           		}
 		           	})
 			  	});
-			// //勾选
-				// $(".checkIconSpan").click(function(){
-				// 	// $(this).toggleClass("checkedIcon");
-				// 	if($(this).hasClass("checkedIcon")){
-				// 		$(this).removeClass("checkedIcon");
-				// 		$(".all").removeClass("checkedIcon");
-				// 	}else{
-				// 		$(this).addClass("checkedIcon");
-				// 	}
-				// });
-				// //全选
-				// $(".all").click(function(){
-				// 	// $(this).toggleClass("checkedIcon");
-				// 	// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
-				// 	if($(this).hasClass("checkedIcon")){
-				// 		$(this).removeClass("checkedIcon");
-				// 		$(".checkIconSpan").removeClass("checkedIcon");
-				// 		$(".all").removeClass("checkedIcon");
-				// 	}else{
-				// 		$(this).addClass("checkedIcon");
-				// 		$(".checkIconSpan").addClass("checkedIcon");
-				// 		$(".all").addClass("checkedIcon");
-				// 	}
-			// });
-			//勾选单个商品
+				//勾选单个商品
 				var goodsNum = 0;
 				var allPrice = 0;
 				$(".checkIconSpan").click(function(){
@@ -133,11 +110,11 @@ $(function(){
 						}
 						$(".moneyCount p").text("结算");
 						$(".moneyCount").css({'background-color':'#f05f50'});
-						var onePrice = Number($(this).siblings(".goodsInfo").children(".numChange").siblings(".num").text());
-						var oneNum = Number($(this).siblings(".goodsInfo").children(".del").siblings("span").text());
-						console.log(oneNum)
-						console.log(oneNum)
-						allPrice = allPrice + oneNum * onePrice;
+						//结算金额
+						var oneNum = ($(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text());
+						var onePrice = ($(this).siblings(".goodsInfo").children(".del").children(".goodsPrice").text());
+						var goodsSum = onePrice * oneNum;
+						allPrice = allPrice + goodsSum;
 						$(".allPrice").text("￥"+allPrice+".00");
 					}else{
 						$(this).removeClass("checkedIcon");
@@ -147,10 +124,17 @@ $(function(){
 							goodsNum = goodsNum - 1;
 						}
 						$(".all").removeClass("checkedIcon");
+						//结算金额
+						var oneNum = ($(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text());
+						var onePrice = ($(this).siblings(".goodsInfo").children(".del").children(".goodsPrice").text());
+						var goodsSum = onePrice * oneNum;
+						allPrice = allPrice - goodsSum;
+						$(".allPrice").text("￥"+allPrice+".00");
 					}
 				});
 				//全选
 				$(".all").click(function(){
+					var allPrice = 0;
 					if($(".moneyCount p").text()=="请选择"){
 						$(".all").addClass("checkedIcon");
 						$(".checkIconSpan").addClass("checkedIcon");
@@ -217,6 +201,34 @@ $(function(){
 							alert("网络错误！");
 						}
 					})
+				});
+				//结算(临时订单)
+				$(".moneyCount").click(function(){
+					if($(".moneyCount p").text()=="结算"){
+						$.ajax({
+							url: 'http://dbshop.com/index.php/Api/order/ordertmp',
+							type: 'post',
+							dataType: 'json',
+							data: {
+								token: userId,
+								goods_id: 13,
+								count: 5,
+								cart: [1,2],
+							},
+							success: function(res){
+								if(res.error_no == 0){
+									location.href = "./ordertmp.html";
+								}else{
+									alert(res.msg);
+								}
+							},
+							error: function(){
+								alert("网络错误!");
+							}
+						})
+					}else{
+
+					}
 				});
 			}else{
 				alert(res.msg);

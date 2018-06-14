@@ -393,9 +393,10 @@
 
 |参数名|必选|类型|说明|
 |:----    |:---|:----- |-----   |
+|token  |是|:string |用户id   |
 |goods_id |是  |string |商品id|
-|goods_num |是  |string |商品数量|
-|cartid |是  |array |购物车id "[1,3,5]"|
+|count |是  |string |商品数量|
+|cart |是  |array |购物车id "[1,3,5]"|
 
 
  **返回示例**
