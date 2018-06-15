@@ -175,27 +175,27 @@ $(function(){
             //如果未登录，跳转到登录界面
             location.href="./login.html";
         }else{//如果登录，则跳转到确认订单页面
-            var goodsNum = parseInt($(".num").text()); 
-            $.ajax({
-                url: 'http://dbshop.com/index.php/Api/order/ordertmp',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    // token: userId;
-                    goods_id: id_no,
-                    count: goodsNum,
-                },
-                success: function(res){
-                    if(res.error_no == 0){
-                        location.href = "./ordertmp.html";
-                    }else{
-                        alert(res.msg);
-                    }
-                },
-                error: function(){
-                    alert("网络错误!");
-                }
-            });
+            // var goodsNum = parseInt($(".num").text()); 
+            // $.ajax({
+            //     url: 'http://dbshop.com/index.php/Api/order/ordertmp',
+            //     type: 'post',
+            //     dataType: 'json',
+            //     data: {
+            //         // token: userId;
+            //         goods_id: id_no,
+            //         count: goodsNum,
+            //     },
+            //     success: function(res){
+            //         if(res.error_no == 0){
+            //             location.href = "./ordertmp.html";
+            //         }else{
+            //             alert(res.msg);
+            //         }
+            //     },
+            //     error: function(){
+            //         alert("网络错误!");
+            //     }
+            // });
         }
     });
 })
