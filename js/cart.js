@@ -37,7 +37,7 @@ $(function(){
 				var goodsStr = "";
 				var g = res.data.cart;
 				for(var i=0; i<g.length; i++){
-					goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span>￥</span><span class='goodsPrice'>"+g[i].goods_price/100+".00</span></div></div></div>";
+					goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span><i class='a'>￥</i><i class='goodsPrice'>"+g[i].goods_price/100+".00</i></span></div></div></div>";
 				}
 				$(".goodsLists").html(goodsStr);
 				//数量的减
@@ -111,8 +111,8 @@ $(function(){
 						$(".moneyCount p").text("结算");
 						$(".moneyCount").css({'background-color':'#f05f50'});
 						//结算金额
-						var oneNum = ($(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text());
-						var onePrice = ($(this).siblings(".goodsInfo").children(".del").children(".goodsPrice").text());
+						var oneNum = $(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text();
+						var onePrice = $(this).siblings(".goodsInfo").children(".del").children("span").children(".goodsPrice").text();
 						var goodsSum = onePrice * oneNum;
 						allPrice = allPrice + goodsSum;
 						$(".allPrice").text("￥"+allPrice+".00");
@@ -125,8 +125,8 @@ $(function(){
 						}
 						$(".all").removeClass("checkedIcon");
 						//结算金额
-						var oneNum = ($(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text());
-						var onePrice = ($(this).siblings(".goodsInfo").children(".del").children(".goodsPrice").text());
+						var oneNum = $(this).siblings(".goodsInfo").children(".info").children(".numChange").children(".num").text();
+						var onePrice = $(this).siblings(".goodsInfo").children(".del").children("span").children(".goodsPrice").text();
 						var goodsSum = onePrice * oneNum;
 						allPrice = allPrice - goodsSum;
 						$(".allPrice").text("￥"+allPrice+".00");
@@ -182,7 +182,7 @@ $(function(){
 											var goodsStr = "";
 											var g = res.data.cart;
 											for(var i=0; i<g.length; i++){
-												goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span>￥"+g[i].goods_price/100+".00</span></div></div></div>";
+												goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span><i class='a'>￥</i><i class='goodsPrice'>"+g[i].goods_price/100+".00</i></span></div></div></div>";
 											}
 											$(".goodsLists").html(goodsStr);
 										}else{
@@ -217,7 +217,9 @@ $(function(){
 							},
 							success: function(res){
 								if(res.error_no == 0){
+									//跳转到确认订单界面
 									location.href = "./ordertmp.html";
+									localStorage.setItem("oid",res.data.oid);
 								}else{
 									alert(res.msg);
 								}
@@ -239,7 +241,7 @@ $(function(){
 			var goodsStr = "";
 			var g = res.data.cart;
 			for(var i=0; i<g.length; i++){
-				goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span>￥"+g[i].goods_price/100+".00</span></div></div></div>";
+				goodsStr += "<div class='goodsList' data-id='"+g[i].id+"'><span class='checkIcon checkIconSpan'></span><div class='goodsInfo clearfix'><img src='"+g[i].image+"'><div class='info'><h6>"+g[i].goods_name+"</h6><p>玫瑰乌龙+玫瑰红茶</p><div class='numChange'><span class='numJian'>-</span><span class='num'>"+g[i].goods_num+"</span><span class='numJia'>+</span></div></div><div class='del'><h6 class='deleteGoods'>删除</h6><span><i class='a'>￥</i><i class='goodsPrice'>"+g[i].goods_price/100+".00</i></span></div></div></div>";
 			}
 			$(".goodsLists").html(goodsStr);
 			//数量的增减
@@ -257,30 +259,30 @@ $(function(){
 		    	var idNo = $(this).closest(".goodsList").data("id");
 		    	$(this).prev(".num").text(num+1);
 		  	});
-			// //勾选
-			// $(".checkIconSpan").click(function(){
-			// 	// $(this).toggleClass("checkedIcon");
-			// 	if($(this).hasClass("checkedIcon")){
-			// 		$(this).removeClass("checkedIcon");
-			// 		$(".all").removeClass("checkedIcon");
-			// 	}else{
-			// 		$(this).addClass("checkedIcon");
-			// 	}
-			// });
-			// //全选
-			// $(".all").click(function(){
-			// 	// $(this).toggleClass("checkedIcon");
-			// 	// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
-			// 	if($(this).hasClass("checkedIcon")){
-			// 		$(this).removeClass("checkedIcon");
-			// 		$(".checkIconSpan").removeClass("checkedIcon");
-			// 		$(".all").removeClass("checkedIcon");
-			// 	}else{
-			// 		$(this).addClass("checkedIcon");
-			// 		$(".checkIconSpan").addClass("checkedIcon");
-			// 		$(".all").addClass("checkedIcon");
-			// 	}
-			// });
+			//勾选
+			$(".checkIconSpan").click(function(){
+				// $(this).toggleClass("checkedIcon");
+				if($(this).hasClass("checkedIcon")){
+					$(this).removeClass("checkedIcon");
+					$(".all").removeClass("checkedIcon");
+				}else{
+					$(this).addClass("checkedIcon");
+				}
+			});
+			//全选
+			$(".all").click(function(){
+				// $(this).toggleClass("checkedIcon");
+				// $(".checkIcon").toggleClass("checkedIcon");if($(this).hasClass("checkedIcon")){
+				if($(this).hasClass("checkedIcon")){
+					$(this).removeClass("checkedIcon");
+					$(".checkIconSpan").removeClass("checkedIcon");
+					$(".all").removeClass("checkedIcon");
+				}else{
+					$(this).addClass("checkedIcon");
+					$(".checkIconSpan").addClass("checkedIcon");
+					$(".all").addClass("checkedIcon");
+				}
+			});
 		}
 	})
 	

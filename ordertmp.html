@@ -8,78 +8,102 @@
 	<script type="text/javascript" src="./js/jquery.js"></script>
 </head>
 <body>
-	<div class="address_tit">
-		<p>收货地址</p>
-	</div>
-	<div class="address">
-		<div class="add hide">
-			<span>+</span>
-			<p>新建地址</p>
+	<div class="orderTmp ">
+		<div class="address_tit ">
+			<p>收货地址</p>
 		</div>
-		<div class="addressInfo">
-			<div class="userName">
-				<p>收货人： 骆林芝        13213211232</p>
+		<div class="address ">
+			<div class="add hide">
+				<span>+</span>
+				<p>新建地址</p>
 			</div>
-			<div class="userAdderss">
-				<p>吉林省/吉林市/龙潭区/北华大学北校区</p>
-			</div>
-		</div>
-	</div>
-	<div class="goosInfo">
-		<div class="tit">豆瓣市集</div>
-		<div class="info">
-			<img src="./image/p1956124.jpg">
-			<div class="infoList">
-				<h6>豆瓣收藏夹</h6>
-				<p>森林绿</p>
-				<span>数量：1</span>
-				<strong>￥99.00</strong>
+			<div class="addressInfo ">
+				<div class="userName">
+					<p>收货人： 骆林芝        13213211232</p>
+				</div>
+				<div class="userAdderss">
+					<p>吉林省/吉林市/龙潭区/北华大学北校区</p>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="coupon">
-		<div class="couponTit">
-			<span class="couponLeft">优惠券</span>
-			<span class="couponRight">暂无可用优惠券</span>
+		<div class="goosAll">
+			<!-- <div class="goosInfo">
+				<div class="tit">豆瓣市集</div>
+				<div class="info">
+					<img src="./image/p1956124.jpg">
+					<div class="infoList clearfix">
+						<h6>豆瓣收藏夹</h6>
+						<p>森林绿</p>
+						<span>数量：1</span>
+						<strong>￥99.00</strong>
+					</div>
+				</div>
+			</div> -->
 		</div>
-		<div class="couponSum">
-			<span class="couponLeft">小计</span>
-			<span class="couponRight">￥99.00</span>
-		</div>
-	</div>
-	<div class="freight">
-		<div class="freightCount">
-			<span class="couponLeft">运费</span>
-			<span class="couponRight">￥0.00</span>
-		</div>
-		<div class="bill">
-			<span class="couponLeft"><img src="./image/email_a.png">我要开发票</span>
-			<span class="couponRight">></span>
-		</div>
-		<div class="leaveWords">
-			<input type="text" name="" placeholder="备注(请输入 100 字以内留言)">
-			<p>请在下单后30分钟之内完成付款，否则订单将被取消</p>
-		</div>
-	</div>
-	<div class="pay">
-		<p>选择支付方式</p>
-		<div class="payType">
-			<div class="weixin">
-				<img src="./image/weixin.png">
-				<span>使用微信支付</span>
-				<input type="radio" name="payType" value="wexin" checked="checked">
+		<div class="coupon">
+			<div class="couponTit clearfix">
+				<span class="couponLeft">优惠券</span>
+				<span class="couponRight">暂无可用优惠券</span>
 			</div>
-			<div class="zhifubao">
-				<img src="./image/zhifubao.png">
-				<span>使用支付宝支付</span>
-				<input type="radio" name="payType" value="zhifubao">
+			<div class="couponSum clearfix">
+				<span class="couponLeft">小计</span>
+				<span class="couponRight">￥99.00</span>
 			</div>
 		</div>
+		<div class="freight">
+			<div class="freightCount clearfix">
+				<span class="couponLeft">运费</span>
+				<span class="couponRight">￥0.00</span>
+			</div>
+			<div class="bill clearfix">
+				<span class="couponLeft"><img src="./image/email_a.png">我要开发票</span>
+				<span class="couponRight">></span>
+			</div>
+			<div class="leaveWords">
+				<input type="text" name="" placeholder="备注(请输入 100 字以内留言)">
+				<p>请在下单后30分钟之内完成付款，否则订单将被取消</p>
+			</div>
+		</div>
+		<div class="pay">
+			<p>选择支付方式</p>
+			<div class="payType">
+				<div class="weixin">
+					<img src="./image/weixin.png">
+					<span>使用微信支付</span>
+					<input type="radio" name="payType" value="wexin" checked="checked">
+				</div>
+				<div class="zhifubao">
+					<img src="./image/zhifubao.png">
+					<span>使用支付宝支付</span>
+					<input type="radio" name="payType" value="zhifubao">
+				</div>
+			</div>
+		</div>
+		<div class="submit">
+			<span class="need">应付:</span>
+			<span class="countSum">￥99.00</span>
+			<span class="submitBut">提交订单</span>
+		</div>
 	</div>
-	<div class="submit">
-		<span class="need">应付:</span>
-		<span class="countSum">￥99.00</span>
-		<span class="submitBut">提交订单</span>
+	<div class="addAddress hide">
+		<div class="address">
+			<div class="back">
+				<返回
+			</div>
+			<div class="addressInfo">
+				<div class="userName">
+					<p>收货人： 骆林芝        13213211232</p>
+				</div>
+				<div class="userAdderss">
+					<p>吉林省/吉林市/龙潭区/北华大学北校区</p>
+				</div>
+			</div>
+			<div class="add">
+				<span>+</span>
+				<p>新建地址</p>
+			</div>
+		</div>
 	</div>
+	<script type="text/javascript" src="./js/ordertmp.js"></script>
 </body>
 </html>

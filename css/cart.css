@@ -129,7 +129,9 @@ body{
 					font-size: 1.2rem;
 					margin-top: 4rem;
 					position: absolute;
-					right: 1rem;
+					right: 1rem;				}
+				.del span i{
+					font-style: normal;
 				}
 .choose{
 	width: 100%;
