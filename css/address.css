@@ -1,0 +1,151 @@
+html,body{
+	font-size: 62.5%;
+}
+body,div,a,p,span,input,form,label,select{
+	margin: 0;
+	padding: 0;
+}
+.clearfix::after{
+	clear: both;
+	display: block;
+	content: "";
+	height: 0;
+}
+.back{
+	line-height: 4rem;
+	background: rgb(247,247,247);
+}
+	.back a{
+		text-decoration: none;
+		color: #9a9a9a;
+		font-size: 1.5rem;
+		margin-left: 1.5rem;
+	}
+.addressAll{
+	background: #fff;
+	color: #5c5c5c;
+	font-size: 1.2rem;
+}
+	.addressInfo{
+		line-height: 3rem;
+		border: 0.2em solid #e4e4e4;
+		margin-bottom: 0.3rem;
+	}
+	.addBoder{
+		border: 0.2rem solid #0aa082;
+	}
+		.userName{
+			border-bottom: 0.1rem solid #e4e4e4;
+			margin: 0 1.5rem;
+		}
+			.userName p{
+				display: inline-block;
+			}
+			.tel{
+				float: right;
+			}
+		.userAdderss{
+			margin: 0 1.5rem;
+		}
+		.change{
+			color: #ff966b;
+			margin: 0 1.5rem;
+		}
+			.delete{
+				margin-left: 2rem;
+			}
+			.setMoren{
+				float: right;
+			}
+.add{
+	background: #fff;
+	color: #5c5c5c;
+	font-size: 1.2rem;
+	border: 0.2em solid #e4e4e4;
+	padding: 1rem 0 2rem 0;
+	text-align: center;
+}
+	.add span{
+		display: block;
+		margin: 0 1rem;
+		color: #e4e4e4;
+		font-size: 4rem;
+		font-weight: 200;
+	}
+	.add p{
+		color: #f05f50;
+		font-size: 1.3rem;
+	}
+.peopleAddress{
+	margin: 0 2.5rem 0 1.5rem;
+	font-size: 1.2rem;
+}
+	.new{
+		font-size: 1.5rem;
+		line-height: 4rem;
+	}
+		.new p{
+			display: inline-block;
+		}
+		.new span{
+			float: right;
+		}
+	.beforeInp{
+		margin-bottom: 1rem;	
+		padding-left: 1rem;
+	}
+		.beforeInp:before{
+			position: absolute;
+			content: "*";
+			color: red;
+			line-height: 2.5rem;
+			left: 0.8rem;
+		}
+		.beforeInp input{
+			width: 100%;
+			line-height: 2.5rem;
+			border:0.1rem solid #e4e4e4;
+			color: #494949;
+			background: #f7f7f7;
+			padding-left: 1rem;
+		}
+		.beforeInp input::-webkit-input-placeholder{ /*WebKit browsers*/
+			color: rgb(222,222,222);
+		}
+		.beforeInp input::-moz-input-placeholder{ /*Mozilla Firefox*/
+			color: rgb(222,222,222);
+		}
+		.beforeInp input::-ms-input-placeholder{ /*Internet Explorer*/ 
+			color: rgb(222,222,222);
+		}
+	.distpicker{
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: row;
+  		width: 100%;
+  		justify-content: space-between;
+	}
+	.distpicker div:last-child {
+		margin-right: 0;
+	}
+	.form-group{
+		width: 33%;
+		margin-right: 2rem;
+	}
+		.form-control{
+			width: 100%;
+			height: 2.5rem;
+			line-height: 2.5rem;
+			border:0.1rem solid #e4e4e4;
+			color: #494949;
+			background: #f7f7f7;
+		}
+	.selectInfo{
+		background: #0aa082;
+		margin: 1.5rem 2rem 0 1rem;
+		line-height: 2.5rem;
+		width: 100%;
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
+	}
