@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>添加地址</title>
+	<meta name="viewport" content=" maximum-scale=1.0, minimum=1.0, user-scalable=0, width=device-width, initial-scale=1.0" ">
+	<link rel="stylesheet" type="text/css" href="./css/address.css">
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script src="./js/distpicker.data.js"></script>
+	<script src="./js/distpicker.js"></script>
+</head>
+<body>
+	<div class="back">
+		<a href="javascript:void(0)"><返回</a>
+	</div>
+	<div class="addressAll">
+		<div class="addressInfo addBoder">
+			<div class="userName">
+				<p>收货人： 骆林芝 </p><span class="tel">13213211232</span>
+			</div>
+			<div class="userAdderss">
+				<p>吉林省/吉林市/龙潭区/北华大学北校区</p>
+			</div>
+			<div class="change">
+				<span>修改地址</span>
+				<span class="delete">删除</span>
+				<span class="setMoren">设为默认</span>
+			</div>
+		</div>
+		<div class="addressInfo">
+			<div class="userName">
+				<p>收货人： 骆林芝 </p><span class="tel">13213211232</span>
+			</div>
+			<div class="userAdderss">
+				<p>吉林省/吉林市/龙潭区/北华大学北校区</p>
+			</div>
+			<div class="change">
+				<span>修改地址</span>
+				<span class="delete">删除</span>
+				<span class="setMoren">设为默认</span>
+			</div>
+		</div>
+	</div>
+	<div class="add">
+		<span>+</span>
+		<p>新建地址</p>
+	</div>
+	<div class="peopleAddress">
+		<div class="new clearfix">
+			<p>新建地址</p>
+			<span>X</span>
+		</div>
+		<div class="peopleName beforeInp">
+			<input type="text" name="" placeholder="收货人姓名">
+		</div>
+		<div class="peoplePhone beforeInp">
+			<input type="text" name="" placeholder="收货人电话号码">
+		</div>
+		<form class="form-inline">
+	      	<div data-toggle="distpicker" class="distpicker beforeInp">
+		        <div class="form-group">
+		          	<select class="form-control" id="province3" data-province="浙江省"></select>
+		        </div>
+		        <div class="form-group">
+		          	<select class="form-control" id="city3" data-city="杭州市"></select>
+		        </div>
+	        	<div class="form-group">
+	          		<select class="form-control" id="district3" data-district="西湖区"></select>
+	       	 	</div>
+	      	</div>     
+	    </form>
+	    <div class="peopleName beforeInp">
+			<input type="text" name="" placeholder="请输入详细地址，例街道号码，楼门号">
+		</div>
+		<div class="selectInfo">
+			保存
+		</div>
+	</div>
+</body>
+</html>
